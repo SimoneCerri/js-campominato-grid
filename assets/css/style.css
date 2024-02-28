@@ -9,10 +9,7 @@
 
 
 /* #region Utilities */
-#start_button
-{
-    padding: 1em;
-}
+
 /* #endregion Utilities */
 
 
@@ -27,7 +24,7 @@
 
     display: flex;
     justify-content: space-between;
-    padding: 3em;
+    /* padding: 3em; */
     height: 150px;
 
     .left
@@ -38,12 +35,37 @@
         h2 
         {
             align-self: center;
+            font-size: 60px;
         }
 
         img 
         {
             width: 100%;
+        }
+    }
 
+    .right
+    {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        padding-right: 2em;
+
+        h3 
+        {
+            font-size: 30px;
+            padding-bottom: 0.25em;
+        }
+
+        #difficulty
+        {
+            width: 200px;
+            padding: 0.5em;
+        }
+
+        #start_button
+        {
+            padding: 0.5em;
         }
     }
 }
