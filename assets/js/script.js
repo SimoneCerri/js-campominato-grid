@@ -13,7 +13,7 @@ pressStart.addEventListener("click", function ()
         container.insertAdjacentHTML("beforeend", markup);
     };
     //give to every cell a progressive number(1 - 100).
-    //FOR cycle for numbers.
+    
     //add to cells.
     let squareS = document.getElementsByClassName("square");
     console.log(squareS);
@@ -23,7 +23,24 @@ pressStart.addEventListener("click", function ()
         console.log(square);
         square.innerHTML = "1";
     }
+
+    function progressiveNumbers (cellsNumbers)
+    {
+    let arrayNumbers = [];
+    let num = 1;
+    for (let x = 0; x < cellsNumbers; x++)
+    {
+        arrayNumbers.push(num);
+        num++
+
+    }  
+    };
+
 });
+
+//FOR cycle for numbers.
+
+
 
 
 //CLICK on cell to give a console msg with the number.
