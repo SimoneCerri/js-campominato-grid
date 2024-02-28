@@ -9,7 +9,10 @@
 
 
 /* #region Utilities */
-
+.change_color
+{
+    background-color: red;
+}
 /* #endregion Utilities */
 
 
@@ -157,7 +160,7 @@
     {
         width: 100px;
         height: 100px;
-        background-color: palegoldenrod;
+        /* background-color: palegoldenrod; */
         border: 1px solid #333;
         text-align: center;
         line-height: 100px;

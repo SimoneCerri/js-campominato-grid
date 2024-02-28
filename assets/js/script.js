@@ -2,7 +2,7 @@
 
 let pressStart = document.getElementById("start_button");
 let difficyltyEl = document.getElementById("difficulty");
-console.log(difficyltyEl);
+//console.log(difficyltyEl);
 let container = document.querySelector(".container");
 let markup = `<div class="square"></div>`;
 let cellsNumbers = 100;
@@ -13,7 +13,7 @@ pressStart.addEventListener("click", function ()
     container.innerHTML = "" ; //clean the container.
 
     let difficultyValue = difficyltyEl.value;
-    console.log(difficultyValue);
+    //console.log(difficultyValue);
     if (difficultyValue === "easy")
     {
         cellsNumbers = 49;
@@ -57,8 +57,8 @@ function createGrid(cellsNumbers)
         //addEventListener on single cell.
         square.addEventListener("click", function ()
         {
-            
-            console.log(x + 1);
+            //console.log(x + 1);
+            square.classList.toggle("change_color");
         });
     } 
 };
