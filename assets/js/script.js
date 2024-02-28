@@ -17,14 +17,17 @@ pressStart.addEventListener("click", function ()
     //give to every cell a progressive number(1 - 100).
     //add to cells.
     let squareS = document.getElementsByClassName("square");
-    console.log(squareS);
+    //console.log(squareS);
     for (let x = 0; x < squareS.length; x++)
     {
         const square = squareS[x];
-        console.log(square);
+        //console.log(square);
         //FOR cycle for numbers.
         square.innerHTML = x + 1;
-
+        square.addEventListener("click", function ()
+        {
+            console.log(x + 1);
+        });
     }
 });
 
