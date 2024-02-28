@@ -11,8 +11,9 @@
     max-width: 1000px;
     display: flex;
     flex-wrap: wrap;
-    margin: auto;
-    padding: 3em 0;
+    align-items: center;
+    justify-content: center;
+    
 }
 
 .square
@@ -33,26 +34,43 @@
 
 #site_header
 {
+
     display: flex;
     justify-content: space-between;
     padding: 3em;
-    height: 100px;
+    height: 150px;
 
-    h2 
+    .left
     {
-        text-align: center;
+        display: flex;
+        /* align-items: center; */
+        
+        h2 
+        {
+            align-self: center;
+        }
+
+        img 
+        {
+            width: 100%;
+
+        }
     }
 }
 
 #site_main
 {
-    height: calc(100vh - 200px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 250px);
     min-height: 600px;
     background-color: paleturquoise;
 }
 
 #site_footer
 {
+    text-align: center;
     height: 100px;
     font-size: 50px;
     i 
