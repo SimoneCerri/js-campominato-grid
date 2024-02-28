@@ -1,6 +1,8 @@
 //CLICK on button to generate a grid.
 
 let pressStart = document.getElementById("start_button");
+let difficyltyEl = document.getElementById("difficulty");
+console.log(difficyltyEl);
 let container = document.querySelector(".container");
 let markup = `<div class="square"></div>`;
 let cellsNumbers = 100;
@@ -9,7 +11,26 @@ let cellsNumbers = 100;
 pressStart.addEventListener("click", function ()
 {   
     container.innerHTML = "" ; //clean the container.
-    createGrid(cellsNumbers);
+
+    let difficultyValue = difficyltyEl.value;
+    console.log(difficultyValue);
+    if (difficultyValue === "easy")
+    {
+        cellsNumbers = 49;
+        createGrid(cellsNumbers);
+        
+    }
+    else if (difficultyValue === "medium")
+    {
+        cellsNumbers = 81;
+        createGrid(cellsNumbers);
+    }
+    else if (difficultyValue === "hard")
+    {
+        cellsNumbers = 100;
+      createGrid(cellsNumbers);  
+    }
+    
     
 });
 
