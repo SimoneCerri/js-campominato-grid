@@ -11,7 +11,8 @@
     max-width: 1000px;
     display: flex;
     flex-wrap: wrap;
-    margin: 0 auto;
+    margin: auto;
+    padding: 3em 0;
 }
 
 .square
@@ -20,4 +21,43 @@
     height: 100px;
     background-color: palegoldenrod;
     border: 1px solid #333;
+    text-align: center;
+    line-height: 100px;
+    font-size: 25px;
+}
+
+#start_button
+{
+    padding: 1em;
+}
+
+#site_header
+{
+    display: flex;
+    justify-content: space-between;
+    padding: 3em;
+    height: 100px;
+
+    h2 
+    {
+        text-align: center;
+    }
+}
+
+#site_main
+{
+    height: calc(100vh - 200px);
+    min-height: 600px;
+    background-color: paleturquoise;
+}
+
+#site_footer
+{
+    height: 100px;
+    font-size: 50px;
+    i 
+    {
+        font-size: 40px;
+        color: red;
+    }
 }

@@ -8,12 +8,13 @@ let cellsNumbers = 100;
 //addEventListener.
 pressStart.addEventListener("click", function ()
 {   
+    container.innerHTML = "" ; //clean the container.
     for (let x = 0; x < cellsNumbers; x++)
     {
         container.insertAdjacentHTML("beforeend", markup);
     };
+
     //give to every cell a progressive number(1 - 100).
-    
     //add to cells.
     let squareS = document.getElementsByClassName("square");
     console.log(squareS);
@@ -21,10 +22,14 @@ pressStart.addEventListener("click", function ()
     {
         const square = squareS[x];
         console.log(square);
-        square.innerHTML = "1";
-    }
+        //FOR cycle for numbers.
+        square.innerHTML = x + 1;
 
-    function progressiveNumbers (cellsNumbers)
+    }
+});
+
+
+/* function progressiveNumbers (cellsNumbers)
     {
     let arrayNumbers = [];
     let num = 1;
@@ -32,14 +37,10 @@ pressStart.addEventListener("click", function ()
     {
         arrayNumbers.push(num);
         num++
-
     }  
     };
 
-});
-
-//FOR cycle for numbers.
-
+console.log(progressiveNumbers(cellsNumbers)); */
 
 
 
