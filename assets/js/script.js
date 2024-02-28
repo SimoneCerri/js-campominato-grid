@@ -9,7 +9,15 @@ let cellsNumbers = 100;
 pressStart.addEventListener("click", function ()
 {   
     container.innerHTML = "" ; //clean the container.
-    for (let x = 0; x < cellsNumbers; x++)
+    createGrid(cellsNumbers);
+    
+});
+
+
+//make a function to reuse
+function createGrid(cellsNumbers)
+{
+   for (let x = 0; x < cellsNumbers; x++)
     {
         container.insertAdjacentHTML("beforeend", markup);
     };
@@ -31,5 +39,5 @@ pressStart.addEventListener("click", function ()
             
             console.log(x + 1);
         });
-    }
-});
+    } 
+};
