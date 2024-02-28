@@ -24,33 +24,12 @@ pressStart.addEventListener("click", function ()
         //console.log(square);
         //FOR cycle for numbers.
         square.innerHTML = x + 1;
+        //CLICK on cell to give a console msg with the number.
+        //addEventListener on single cell.
         square.addEventListener("click", function ()
         {
+            
             console.log(x + 1);
         });
     }
 });
-
-
-/* function progressiveNumbers (cellsNumbers)
-    {
-    let arrayNumbers = [];
-    let num = 1;
-    for (let x = 0; x < cellsNumbers; x++)
-    {
-        arrayNumbers.push(num);
-        num++
-    }  
-    };
-
-console.log(progressiveNumbers(cellsNumbers)); */
-
-
-
-//CLICK on cell to give a console msg with the number.
-
-
-//addEventListener on single cell.
-
-
-//console.log
