@@ -64,10 +64,13 @@ function createGrid(cellsNumbers)
         square.innerHTML = x + 1;
 
         //CLICK on cell to give a console msg with the number.
+        
         square.addEventListener("click", function ()
         {
             //console.log(x + 1);
             let findBomb = Number(square.innerHTML);
+            let clicks = 0;
+            
 
             if (!arrayBomb.includes(findBomb))
             {
@@ -76,7 +79,8 @@ function createGrid(cellsNumbers)
                 /* var clicks = 0;
                 clicks++;
                 console.log(clicks); */
-                
+                clicks++;
+                console.log(clicks);
             }
             else if (arrayBomb.includes(findBomb))
             {
@@ -87,9 +91,10 @@ function createGrid(cellsNumbers)
                 //container.innerHTML = "";
             }
 
-            /* while (!arrayBomb.includes(findBomb))
+            /* let clicks;
+            while (!arrayBomb.includes(findBomb))
             {
-                let clicks;
+                
                 clicks++;
                 console.log(clicks);
             } */
@@ -98,6 +103,7 @@ function createGrid(cellsNumbers)
             {
                 //console.log("finish" , clicks);
             }
+            
         });
     } 
 };
