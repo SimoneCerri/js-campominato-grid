@@ -21,8 +21,6 @@ Bonus
     - con difficoltà 3 => 49 caselle, con un numero compreso tra 1 e 49, divise in 7 caselle per 7 righe;
 
 
-
-
 ## ?Solution? ##
 - CLICK on button to generate a grid.
     - button on html.
@@ -33,6 +31,17 @@ Bonus
 - CLICK on cell to give a console msg with the number.
     - addEventListener on single cell.
     - console.log
+- generate 16 random numbers (different) to put in arrayBomb.
+- CLICK on cell.
+    - IF cells have "bomb-number".
+        - bomb and red color / end game.
+    - ELSE cells color blue / continue the game.
+- END GAME:
+    - max numbers - bomb numbers.
+    - bomb clicked.
+- ALERT:
+    - win + number of try/clicks.
+    - lose.
 
 BONUS
 - add a select with 3 difficulties
