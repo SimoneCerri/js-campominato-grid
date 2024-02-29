@@ -68,7 +68,14 @@ function createGrid(cellsNumbers)
             //console.log(x + 1);
             let findBomb = Number(square.innerHTML);
 
-            if (arrayBomb.includes(findBomb))
+            if (!arrayBomb.includes(findBomb))
+            {
+                //ELSE cells color blue / continue the game.
+                square.classList.toggle("change_color_2");
+                var clicks = 0;
+                clicks++;
+            }
+            else if (arrayBomb.includes(findBomb))
             {
                 //IF cells have "bomb-number".
                 //bomb and red color / end game.
@@ -76,12 +83,10 @@ function createGrid(cellsNumbers)
                 alert("YOU LOSE")
                 //container.innerHTML = "";
             }
-            else
+
+            if (arrayBomb.includes(findBomb) || clicks === (cellsNumbers-arrayBomb.length))
             {
-                //ELSE cells color blue / continue the game.
-                square.classList.toggle("change_color_2");
-                clicks++;
-                return clicks;
+                console.log("finish" , clicks);
             }
         });
     } 
@@ -99,7 +104,7 @@ function getBombs(difficultyBomb)
     while (arrayBomb.length < difficultyBomb)
     {
         let bomb = getRandomNumber(cellsNumbers,1);
-        console.log(bomb);
+        //console.log(bomb);
         if (!arrayBomb.includes(bomb))
         {
             arrayBomb.push(bomb);
@@ -112,8 +117,3 @@ function getBombs(difficultyBomb)
 //ALERT:
 //win + number of try/clicks.
 //lose.
-let clicks;
-if (arrayBomb.includes(findBomb) || clicks === (cellsNumbers-arrayBomb.length))
-{
-    
-}
