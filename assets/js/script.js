@@ -1,5 +1,3 @@
-//CLICK on button to generate a grid.
-
 let pressStart = document.getElementById("start_button");
 let difficyltyEl = document.getElementById("difficulty");
 //console.log(difficyltyEl);
@@ -9,11 +7,12 @@ let cellsNumbers = 100;
 let arrayBomb = [];
 let difficultyBomb;
 
-//addEventListener.
+//CLICK on button to generate a grid.
 pressStart.addEventListener("click", function ()
 {   
-    container.innerHTML = "" ; //clean the container.
-
+    //clean the container.
+    container.innerHTML = "" ;
+    
     let difficultyValue = difficyltyEl.value;
     //console.log(difficultyValue);
     if (difficultyValue === "easy")
@@ -22,9 +21,7 @@ pressStart.addEventListener("click", function ()
         createGrid(cellsNumbers);
         difficultyBomb = 5;
         arrayBomb = [];
-        getBombs(difficultyBomb);
-        
-        
+        getBombs(difficultyBomb); 
     }
     else if (difficultyValue === "medium")
     {
@@ -42,18 +39,10 @@ pressStart.addEventListener("click", function ()
         arrayBomb = [];
         getBombs(difficultyBomb);
     }
-
-    
-    
-    
-    //generate 16 random numbers(different) to put in arrayBomb.
-    
-    console.log(arrayBomb);
-    
+    console.log(arrayBomb);  
 });
 
-
-//make a function to reuse
+//make a function to reuse.
 function createGrid(cellsNumbers)
 {
    for (let x = 0; x < cellsNumbers; x++)
@@ -69,24 +58,36 @@ function createGrid(cellsNumbers)
     {
         const square = squareS[x];
         //console.log(square);
+
         //FOR cycle for numbers.
         square.innerHTML = x + 1;
+
         //CLICK on cell to give a console msg with the number.
-        //addEventListener on single cell.
         square.addEventListener("click", function ()
         {
             //console.log(x + 1);
-            square.classList.toggle("change_color");
+            let findBomb = Number(square.innerHTML);
+
+            if (arrayBomb.includes(findBomb))
+            {
+                square.classList.toggle("change_color");
+                alert("YOU LOSE")
+            }
+            else
+            {
+                square.classList.toggle("change_color_2");
+            }
         });
     } 
 };
 
-//function random numbers
+//function random numbers.
 function getRandomNumber(min, max)
 {
     return Math.round(Math.random() * (max - min) + min);
 };
 
+//generate 16 random numbers(different) to put in arrayBomb.
 function getBombs(difficultyBomb)
 {
     while (arrayBomb.length < difficultyBomb)
