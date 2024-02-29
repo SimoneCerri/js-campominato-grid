@@ -7,7 +7,7 @@ let container = document.querySelector(".container");
 let markup = `<div class="square"></div>`;
 let cellsNumbers = 100;
 let arrayBomb = [];
-let difficultyBomb = 16;
+let difficultyBomb;
 
 //addEventListener.
 pressStart.addEventListener("click", function ()
@@ -21,6 +21,9 @@ pressStart.addEventListener("click", function ()
         cellsNumbers = 49;
         createGrid(cellsNumbers);
         difficultyBomb = 5;
+        arrayBomb = [];
+        getBombs(difficultyBomb);
+        
         
     }
     else if (difficultyValue === "medium")
@@ -28,28 +31,24 @@ pressStart.addEventListener("click", function ()
         cellsNumbers = 81;
         createGrid(cellsNumbers);
         difficultyBomb = 16;
+        arrayBomb = [];
+        getBombs(difficultyBomb);
     }
     else if (difficultyValue === "hard")
     {
         cellsNumbers = 100;
         createGrid(cellsNumbers);
         difficultyBomb = 50;
+        arrayBomb = [];
+        getBombs(difficultyBomb);
     }
 
     
     
     
     //generate 16 random numbers(different) to put in arrayBomb.
-    for (let x = 0; x < difficultyBomb; x++)
-    {
-        let bomb = getRandomNumber(cellsNumbers,1);
-        console.log(bomb);
-        /* if (bomb)
-        {
-            arrayBomb.push(bomb);
-        } */
     
-};
+    console.log(arrayBomb);
     
 });
 
@@ -88,6 +87,18 @@ function getRandomNumber(min, max)
     return Math.round(Math.random() * (max - min) + min);
 };
 
+function getBombs(difficultyBomb)
+{
+    while (arrayBomb.length < difficultyBomb)
+    {
+        let bomb = getRandomNumber(cellsNumbers,1);
+        console.log(bomb);
+        if (!arrayBomb.includes(bomb))
+        {
+            arrayBomb.push(bomb);
+        }
+    }
+}
 
 //CLICK on cell.
 //IF cells have "bomb-number".
