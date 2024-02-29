@@ -70,12 +70,18 @@ function createGrid(cellsNumbers)
 
             if (arrayBomb.includes(findBomb))
             {
+                //IF cells have "bomb-number".
+                //bomb and red color / end game.
                 square.classList.toggle("change_color");
                 alert("YOU LOSE")
+                //container.innerHTML = "";
             }
             else
             {
+                //ELSE cells color blue / continue the game.
                 square.classList.toggle("change_color_2");
+                clicks++;
+                return clicks;
             }
         });
     } 
@@ -100,14 +106,14 @@ function getBombs(difficultyBomb)
         }
     }
 }
-
-//CLICK on cell.
-//IF cells have "bomb-number".
-//bomb and red color / end game.
-//ELSE cells color blue / continue the game.
 //END GAME:
 //max numbers - bomb numbers.
 //bomb clicked.
 //ALERT:
 //win + number of try/clicks.
 //lose.
+let clicks;
+if (arrayBomb.includes(findBomb) || clicks === (cellsNumbers-arrayBomb.length))
+{
+    
+}
