@@ -89,7 +89,7 @@ function createGrid(cellsNumbers)
                 square.classList.toggle("change_color");
                 setTimeout(function ()
                 {
-                    alert("YOU LOSE and you score: " + clicks + " points");
+                    alert("YOU LOSE and you score: " + clicks + " points.");
                 }, 500);
 
                 createGrid(cellsNumbers);
@@ -106,10 +106,17 @@ function createGrid(cellsNumbers)
                  * square.removeEventListener("click")
                  * }
                  */
+
+                removeClickEvent();
             }
             
         });
     } 
+};
+
+function removeClickEvent()
+{
+    square.removeEventListener("click");
 };
 
 //function random numbers.
