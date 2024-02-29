@@ -6,6 +6,7 @@ let markup = `<div class="square"></div>`;
 let cellsNumbers = 100;
 let arrayBomb = [];
 let difficultyBomb;
+let scoreNumber = document.querySelector(".score");
 
 //CLICK on button to generate a grid.
 pressStart.addEventListener("click", function ()
@@ -36,7 +37,7 @@ pressStart.addEventListener("click", function ()
         getBombs(difficultyBomb);
         createGrid(cellsNumbers);
     }
-    console.log(arrayBomb);  
+    //console.log(arrayBomb);  
 });
 
 //make a function to reuse.
@@ -78,15 +79,17 @@ function createGrid(cellsNumbers)
                 //ELSE cells color blue / continue the game.
                 square.classList.toggle("change_color_2");
                 clicks++;
-                console.log(clicks);
+                //console.log(clicks);
+                scoreNumber.innerHTML = ("Score: " + clicks);
             }
             else if (arrayBomb.includes(findBomb))
             {
                 //IF cells have "bomb-number".
                 //bomb and red color / end game.
                 square.classList.toggle("change_color");
-                setTimeout(function () {
-                    alert("YOU LOSE");
+                setTimeout(function ()
+                {
+                    alert("YOU LOSE and you score: " + clicks + " points");
                 }, 500);
 
                 createGrid(cellsNumbers);
@@ -96,8 +99,8 @@ function createGrid(cellsNumbers)
             //console.log(cellsNumbers - arrayBomb.length);
             if (clicks == (cellsNumbers - arrayBomb.length))
             {
-                console.log("finish" , clicks);
-                promt('Hai vinto, scrivi il tuo nome: ')
+                //console.log("finish" , clicks);
+                prompt(`YOU WIN ( score: ${clicks} ), let me know your name: `);
                 /**
                  * removeAllClicksEvents(){
                  * square.removeEventListener("click")
@@ -128,9 +131,3 @@ function getBombs(difficultyBomb)
         }
     }
 }
-//END GAME:
-//max numbers - bomb numbers.
-//bomb clicked.
-//ALERT:
-//win + number of try/clicks.
-//lose.
