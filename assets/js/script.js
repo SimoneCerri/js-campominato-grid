@@ -111,10 +111,14 @@ function createGrid(cellsNumbers)
                     
                 }); */
                 /* removeAllClickEvents(); */
-                function removeAllClickEvents()
+                /* function removeAllClickEvents()
                 {
-                    square.removeEventListener("click");
-                }
+                    
+                } */
+                square.removeEventListener("click", function()
+                {
+                    /* square. */
+                });
             }   
         });
     } 
