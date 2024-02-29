@@ -18,26 +18,26 @@ pressStart.addEventListener("click", function ()
     if (difficultyValue === "easy")
     {
         cellsNumbers = 49;
-        createGrid(cellsNumbers);
         difficultyBomb = 5;
         arrayBomb = [];
-        getBombs(difficultyBomb); 
+        getBombs(difficultyBomb);
+        createGrid(cellsNumbers); 
     }
     else if (difficultyValue === "medium")
     {
         cellsNumbers = 81;
-        createGrid(cellsNumbers);
         difficultyBomb = 16;
         arrayBomb = [];
         getBombs(difficultyBomb);
+        createGrid(cellsNumbers);
     }
     else if (difficultyValue === "hard")
     {
         cellsNumbers = 100;
-        createGrid(cellsNumbers);
         difficultyBomb = 50;
         arrayBomb = [];
         getBombs(difficultyBomb);
+        createGrid(cellsNumbers);
     }
     console.log(arrayBomb);  
 });
@@ -73,8 +73,10 @@ function createGrid(cellsNumbers)
             {
                 //ELSE cells color blue / continue the game.
                 square.classList.toggle("change_color_2");
-                var clicks = 0;
+                /* var clicks = 0;
                 clicks++;
+                console.log(clicks); */
+                
             }
             else if (arrayBomb.includes(findBomb))
             {
@@ -85,9 +87,16 @@ function createGrid(cellsNumbers)
                 //container.innerHTML = "";
             }
 
+            /* while (!arrayBomb.includes(findBomb))
+            {
+                let clicks;
+                clicks++;
+                console.log(clicks);
+            } */
+
             if (arrayBomb.includes(findBomb) || clicks === (cellsNumbers-arrayBomb.length))
             {
-                console.log("finish" , clicks);
+                //console.log("finish" , clicks);
             }
         });
     } 

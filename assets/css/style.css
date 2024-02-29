@@ -23,6 +23,21 @@
 
 
 /* #region MediaQuery */
+@media screen and (max-width: 900px)
+{
+    #site_header
+    {
+        .left
+        {
+            h2
+            {
+                display: none;
+            }
+        }
+    
+    }
+}
+
 /* @media screen and (max-width: 1000px)
 {
     #site_main
@@ -40,33 +55,6 @@
         }  
     }
     
-}
-
-@media screen and (max-width: 900px)
-{
-    #site_header
-    {
-        .left
-        {
-            h2
-            {
-                display: none;
-            }
-        }
-    
-    }
-    #site_main {
-
-        .container {
-            max-width: 800px;
-
-            .square {
-                width: 90px;
-                height: 90px;
-            }
-        }
-    }
-
 }
 
 @media screen and (max-width: 800px)
@@ -164,9 +152,6 @@
 
     .square
     {
-        /* width: 100px;
-        height: 100px; */
-        /* background-color: palegoldenrod; */
         aspect-ratio: 1;
         border: 1px solid #333;
         text-align: center;
