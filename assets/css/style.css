@@ -164,9 +164,10 @@
 
     .square
     {
-        width: 100px;
-        height: 100px;
+        /* width: 100px;
+        height: 100px; */
         /* background-color: palegoldenrod; */
+        aspect-ratio: 1;
         border: 1px solid #333;
         text-align: center;
         line-height: 100px;

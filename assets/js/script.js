@@ -57,6 +57,7 @@ function createGrid(cellsNumbers)
     for (let x = 0; x < squareS.length; x++)
     {
         const square = squareS[x];
+        square.style.width = `calc(100% / ${Math.sqrt(cellsNumbers)})`
         //console.log(square);
 
         //FOR cycle for numbers.
