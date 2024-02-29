@@ -106,18 +106,21 @@ function createGrid(cellsNumbers)
                  * square.removeEventListener("click")
                  * }
                  */
-
-                removeClickEvent();
-            }
-            
+                /* square.removeEventListener("click",function()
+                {
+                    
+                }); */
+                /* removeAllClickEvents(); */
+                function removeAllClickEvents()
+                {
+                    square.removeEventListener("click");
+                }
+            }   
         });
     } 
 };
 
-function removeClickEvent()
-{
-    square.removeEventListener("click");
-};
+
 
 //function random numbers.
 function getRandomNumber(min, max)
