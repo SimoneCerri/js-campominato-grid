@@ -6,6 +6,8 @@ let difficyltyEl = document.getElementById("difficulty");
 let container = document.querySelector(".container");
 let markup = `<div class="square"></div>`;
 let cellsNumbers = 100;
+let arrayBomb = [];
+let difficultyBomb = 16;
 
 //addEventListener.
 pressStart.addEventListener("click", function ()
@@ -18,19 +20,36 @@ pressStart.addEventListener("click", function ()
     {
         cellsNumbers = 49;
         createGrid(cellsNumbers);
+        difficultyBomb = 5;
         
     }
     else if (difficultyValue === "medium")
     {
         cellsNumbers = 81;
         createGrid(cellsNumbers);
+        difficultyBomb = 16;
     }
     else if (difficultyValue === "hard")
     {
         cellsNumbers = 100;
-      createGrid(cellsNumbers);  
+        createGrid(cellsNumbers);
+        difficultyBomb = 50;
     }
+
     
+    
+    
+    //generate 16 random numbers(different) to put in arrayBomb.
+    for (let x = 0; x < difficultyBomb; x++)
+    {
+        let bomb = getRandomNumber(cellsNumbers,1);
+        console.log(bomb);
+        /* if (bomb)
+        {
+            arrayBomb.push(bomb);
+        } */
+    
+};
     
 });
 
@@ -62,3 +81,21 @@ function createGrid(cellsNumbers)
         });
     } 
 };
+
+//function random numbers
+function getRandomNumber(min, max)
+{
+    return Math.round(Math.random() * (max - min) + min);
+};
+
+
+//CLICK on cell.
+//IF cells have "bomb-number".
+//bomb and red color / end game.
+//ELSE cells color blue / continue the game.
+//END GAME:
+//max numbers - bomb numbers.
+//bomb clicked.
+//ALERT:
+//win + number of try/clicks.
+//lose.
