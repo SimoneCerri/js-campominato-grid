@@ -9,10 +9,7 @@ let difficultyBomb;
 
 //CLICK on button to generate a grid.
 pressStart.addEventListener("click", function ()
-{   
-    //clean the container.
-    container.innerHTML = "" ;
-    
+{       
     let difficultyValue = difficyltyEl.value;
     //console.log(difficultyValue);
     if (difficultyValue === "easy")
@@ -45,7 +42,13 @@ pressStart.addEventListener("click", function ()
 //make a function to reuse.
 function createGrid(cellsNumbers)
 {
-   for (let x = 0; x < cellsNumbers; x++)
+    //clean the container.
+    container.innerHTML = "";
+    // total clicks
+    let clicks = 0;
+    
+    
+    for (let x = 0; x < cellsNumbers; x++)
     {
         container.insertAdjacentHTML("beforeend", markup);
     };
@@ -69,16 +72,11 @@ function createGrid(cellsNumbers)
         {
             //console.log(x + 1);
             let findBomb = Number(square.innerHTML);
-            let clicks = 0;
-            
 
             if (!arrayBomb.includes(findBomb))
             {
                 //ELSE cells color blue / continue the game.
                 square.classList.toggle("change_color_2");
-                /* var clicks = 0;
-                clicks++;
-                console.log(clicks); */
                 clicks++;
                 console.log(clicks);
             }
@@ -87,21 +85,24 @@ function createGrid(cellsNumbers)
                 //IF cells have "bomb-number".
                 //bomb and red color / end game.
                 square.classList.toggle("change_color");
-                alert("YOU LOSE")
+                setTimeout(function () {
+                    alert("YOU LOSE");
+                }, 500);
+
+                createGrid(cellsNumbers);
                 //container.innerHTML = "";
             }
-
-            /* let clicks;
-            while (!arrayBomb.includes(findBomb))
+            
+            //console.log(cellsNumbers - arrayBomb.length);
+            if (clicks == (cellsNumbers - arrayBomb.length))
             {
-                
-                clicks++;
-                console.log(clicks);
-            } */
-
-            if (arrayBomb.includes(findBomb) || clicks === (cellsNumbers-arrayBomb.length))
-            {
-                //console.log("finish" , clicks);
+                console.log("finish" , clicks);
+                promt('Hai vinto, scrivi il tuo nome: ')
+                /**
+                 * removeAllClicksEvents(){
+                 * square.removeEventListener("click")
+                 * }
+                 */
             }
             
         });

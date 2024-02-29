@@ -78,7 +78,7 @@
 /* #region Header */
 #site_header
 {
-
+    /* box-shadow: inset 0px 0px 20px 10px rgba(99, 84, 84, 1); */
     display: flex;
     justify-content: space-between;
     /* padding: 3em; */
@@ -133,11 +133,13 @@
 
 #site_main
 {
+    box-shadow: inset 0px 0px 20px 10px rgba(99, 84, 84, 1);
     display: flex;
     justify-content: center;
     align-items: center;
-    height: calc(100vh - 250px);
-    min-height: 600px;
+    min-height: calc(100vh - 250px);
+    /* min-height: 600px; */
+    padding: 2rem;
     background-color: palegoldenrod;
 
     .container
@@ -147,7 +149,7 @@
         flex-wrap: wrap;
         align-items: center;
         justify-content: center;
-        box-shadow: 0px 0px 23px 40px rgba(0, 0, 0, 0.1);
+        box-shadow: 0px 0px 30px 40px rgba(0, 0, 0, 0.1);
     }
 
     .square
@@ -166,6 +168,7 @@
 /* #region Footer */
 #site_footer
 {
+    box-shadow: inset 0px 0px 20px 10px rgba(99, 84, 84, 1);
     text-align: center;
     height: 100px;
     font-size: 50px;
