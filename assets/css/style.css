@@ -18,7 +18,7 @@
 
 
 /* #region MediaQuery */
-@media screen and (max-width: 1000px)
+/* @media screen and (max-width: 1000px)
 {
     #site_main
     {
@@ -78,7 +78,7 @@
         }
     }
 
-}
+} */
 /* #endregion MediaQuery */
 
 
@@ -177,6 +177,8 @@
     text-align: center;
     height: 100px;
     font-size: 50px;
+    padding-top: 0.5em;
+
     i 
     {
         font-size: 40px;
